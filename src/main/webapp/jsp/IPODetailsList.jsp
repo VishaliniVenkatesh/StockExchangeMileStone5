@@ -1,21 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
- import="java.util.*,com.demo.SpringMVCBoot.model.Company"    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ import="java.util.*,com.demo.SpringMVCBoot.model.IPOPlanned"    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" >
+<meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" >
 </head>
 <body>
- <header>
+<header>
         
         <img src="images/logo.png" alt="no image" width="70px" height="70px;"> <p id="heading">Stock Market</p>
         
              
          </header>
          <nav>
-                <a href="importStockPage.html">Import Data</a>
+                <a href="#">Import Data</a>
         
                 <div class="dropdown">
                     <button class="dropbtn">Manage Company
@@ -41,8 +41,8 @@
     <p id="body-heading">List of Companies</p>
 
 <%
-List companyList=(List)request.getAttribute("companyList");
-System.out.println(companyList);
+List ipoList=(List)request.getAttribute("IPODetailsList");
+System.out.println(ipoList);
 %>
 
 
@@ -50,24 +50,26 @@ System.out.println(companyList);
 
 <tr>
 
-<th>Company Name</th>
-<th>Turn Over</th>
-<th>CEO</th>
-<th>Board of Directors</th>
-<th>Brief Writeup</th>
+<th>Company Code</th>
+<th>Stock Exchange Id</th>
+<th>Price per share</th>
+<th>Open Date time</th>
+<th>Total No.Of Shares</th>
+<th>Remarks</th>
 </tr>
 
-<% for(int i=0;i<companyList.size();i++){
-	Company e=(Company)companyList.get(i);
+<% for(int i=0;i<ipoList.size();i++){
+	IPOPlanned ipo=(IPOPlanned)ipoList.get(i);
 	%>
 <tr>
 
-<td><%= e.getCompanyName() %></td>
-<td><%= e.getTurnover() %></td>
-<td><%= e.getCeo() %></td>
-<td><%= e.getBoardOfDirectors() %></td>
-<td><%= e.getBriefWriteup() %></td>
-<td><input type="submit"  value="Update" id="button" /></td>
+<td><%= ipo.getCompanyCode() %></td>
+<td><%= ipo.getStock_exchange_id()%></td>
+<td><%= ipo.getPrice_per_share() %></td>
+<td><%= ipo.getOpenDateTime() %></td>
+<td><%= ipo.getTotalNoOfShares() %></td>
+<td><%= ipo.getRemarks() %>
+
 
 </tr>
 <% }%>
@@ -77,7 +79,6 @@ System.out.println(companyList);
 <footer>
         <p id="ftext">Copyright&copy; 2019</p>
     </footer>
-
 
 </body>
 </html>

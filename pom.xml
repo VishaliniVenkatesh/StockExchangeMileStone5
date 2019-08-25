@@ -30,13 +30,25 @@
         <artifactId>spring-boot-starter-tomcat</artifactId>
         <scope>provided</scope>
 	</dependency>
+	
 	<dependency>
+		<groupId>org.apache.poi</groupId>
+		<artifactId>poi</artifactId>
+		<version>3.9</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.apache.poi</groupId>
+		<artifactId>poi-ooxml</artifactId>
+		<version>3.9</version>
+	</dependency>
+	<!-- <dependency>
   		<groupId>org.apache.tomcat.maven</groupId>
   		<artifactId>tomcat7-maven-plugin</artifactId>
   		<version>2.2</version>
 	  	<type>maven-plugin</type>
 	</dependency>
-<!-- 	<dependency>
+	<dependency>
 		<groupId>commons-fileupload</groupId>
 		<artifactId>commons-fileupload</artifactId>
 		<version>1.2</version>
@@ -65,7 +77,6 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			
 		</dependency>
 		
 

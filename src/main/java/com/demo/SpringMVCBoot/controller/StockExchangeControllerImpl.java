@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.demo.SpringMVCBoot.model.Company;
 import com.demo.SpringMVCBoot.model.StockExchange;
 import com.demo.SpringMVCBoot.service.StockExchangeService;
 
@@ -25,33 +23,29 @@ public class StockExchangeControllerImpl implements StockExchangeController{
 	@Autowired
 	private StockExchangeService stockService;
 	
-	
-	
-	
-	//@Override
 	public StockExchange insertStock(StockExchange stockExchange) throws SQLException {
 		
 		return stockService.insertStock(stockExchange);
 	}
 
 	@RequestMapping(path="/stockList")
-	public ModelAndView getStockList() throws Exception {
+	public ModelAndView getStockExchangesList() throws Exception {
 		ModelAndView mv=new ModelAndView();
 		mv.setViewName("stockList");
-		mv.addObject("stockList",stockService.getStockList());
+		mv.addObject("stockList",stockService.getStockExchangesList());
 		return mv;
 	}
 	public static void main(String [] args) {
 		StockExchangeController controller=new StockExchangeControllerImpl();
 		try {
-			System.out.println(controller.getStockList());
+			System.out.println(controller.getStockExchangesList());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 	}
 	@RequestMapping(value = "/addStock", method = RequestMethod.GET)
-	public String getCompanyForm(ModelMap model) {
+	public String addStockExchange(ModelMap model) {
 		System.out.println("Add New Stock");
 		StockExchange s=new StockExchange();
 		
@@ -70,6 +64,6 @@ public class StockExchangeControllerImpl implements StockExchangeController{
 		
 	stockService.insertStock(stock);
 	
-	return "userList";
+	return "success";
 }
 }

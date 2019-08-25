@@ -9,5 +9,5 @@ import com.demo.SpringMVCBoot.model.StockExchange;
 public interface StockExchangeController {
 	
 	 public StockExchange insertStock(StockExchange stockExchange) throws SQLException;
-	 public ModelAndView getStockList() throws Exception;
+	 public ModelAndView getStockExchangesList() throws Exception;
 }

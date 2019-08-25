@@ -2,11 +2,8 @@ package com.demo.SpringMVCBoot.service;
 
 import java.sql.SQLException;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.servlet.ModelAndView;
-
 import com.demo.SpringMVCBoot.dao.StockExchangeDao;
 import com.demo.SpringMVCBoot.model.StockExchange;
 
@@ -25,7 +22,7 @@ public class StockExchangeServiceImpl implements StockExchangeService{
 	}
 
 	@Override
-	public List<StockExchange> getStockList() throws SQLException {
+	public List<StockExchange> getStockExchangesList() throws SQLException {
 		
 		return stockDao.findAll();
 	}

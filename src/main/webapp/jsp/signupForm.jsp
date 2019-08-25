@@ -15,10 +15,7 @@
 <header>
         
         <img src="images/logo.png" alt="no image" width="70px" height="70px;"> <p id="heading">Stock Market</p>
-        
-        
-             
-         </header>
+      </header>
 
 
 <form:form method="POST" action="/addUser"

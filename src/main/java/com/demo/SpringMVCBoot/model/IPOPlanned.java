@@ -1,6 +1,5 @@
 package com.demo.SpringMVCBoot.model;
 
-import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,14 +13,14 @@ public class IPOPlanned {
 	private int stock_exchange_id;
 	private double price_per_share;
 	private int totalNoOfShares;
-	private Date openDateTime;
+	private String openDateTime;
 	private String remarks;
 	public IPOPlanned()
 	{
 		
 	}
 	public IPOPlanned(int id, int companyCode, int stock_exchange_id, double price_per_share, int totalNoOfShares,
-			Date openDateTime, String remarks) {
+			String openDateTime, String remarks) {
 		super();
 		this.id = id;
 		this.companyCode = companyCode;
@@ -61,10 +60,10 @@ public class IPOPlanned {
 	public void setTotalNoOfShares(int totalNoOfShares) {
 		this.totalNoOfShares = totalNoOfShares;
 	}
-	public Date getOpenDateTime() {
+	public String getOpenDateTime() {
 		return openDateTime;
 	}
-	public void setOpenDateTime(Date openDateTime) {
+	public void setOpenDateTime(String openDateTime) {
 		this.openDateTime = openDateTime;
 	}
 	public String getRemarks() {

@@ -11,11 +11,22 @@ header {
 }
 img
 {
+
 margin-left: 70px;
 padding-top: 8px;
 display: inline-block;
 padding-bottom: 0px;
+
 }
+#heading
+{
+ font-size: 50px;
+  color: #FFFFFF;
+  margin-left: 550px;
+  padding-top:1px;
+  display: inline-block;
+}
+
 footer {
   width: 100%; 
   background-color: #C94B30;
@@ -24,13 +35,6 @@ footer {
   font-size: 22px;
   left: 0;
   bottom: 0;
-}
-#heading {
-  font-size: 50px;
-  color: #FFFFFF;
-  margin-left: 480px;
-  padding-top:1px;
-  display: inline-block;
 }
 
 #ftext {
@@ -101,18 +105,15 @@ nav a:hover, .dropdown:hover .dropbtn {
 #topic {
   float:right;
   margin-right: 60px;
- 
  color:#ffffff;
  list-style-type: none;   
 }
-
 #log{
         color: #011108;
         padding-top: 10px;
         text-align: center;
         font-weight: bold;
         font-size: 40px;
-       
 }
 .table{
   padding-top: 5px;
@@ -130,7 +131,6 @@ nav a:hover, .dropdown:hover .dropbtn {
 {
   padding: 20px;
   padding-right:40px;
-  
 }
 .insert-table th
 {
@@ -145,7 +145,6 @@ nav a:hover, .dropdown:hover .dropbtn {
   font-size: 20px;
   border:5px;
   border-radius:20px;
-   
   background-color: rgb(129, 221, 101);
 }
 #ok-button{
@@ -158,7 +157,6 @@ nav a:hover, .dropdown:hover .dropbtn {
   background-color: #9B3C86;
   border: 5px;
   border-radius: 15px;
-  
 }
 #body-heading
 {
@@ -166,14 +164,12 @@ nav a:hover, .dropdown:hover .dropbtn {
   text-align: center;
   font-size: 27px;
   font-weight: bold;
-  
 }
 #search
 {
   padding-top: 85px;
   text-align: center;
   font-size: 16px;
-  
 }
 #upload{
   width: 105px;
@@ -183,8 +179,6 @@ nav a:hover, .dropdown:hover .dropbtn {
   border:solid rgb(116, 62, 216);
   border-radius: 20px;
   background-color: rgb(116, 62, 216);
- 
-
 }
 #generate-button
 {
@@ -210,27 +204,6 @@ h1{
   border: #2980b9 4px solid; 
 }
 
-.email{
-  background:#ecf0f1;
-  border: #ccc 1px solid;
-  border-bottom: #ccc 2px solid;
-  padding: 8px;
-  width:250px;
-  color:#AAAAAA;
-  margin-top:10px;
-  font-size:1em;
-  border-radius:4px;
-}
-
-.password{
-  border-radius:4px;
-  background:#ecf0f1;
-  border: #ccc 1px solid;
-  padding: 8px;
-  width:250px;
-  font-size:1em;
-}
-
 #btn{
  height:38px;
   width:145px;
@@ -239,12 +212,15 @@ h1{
   color:white;
   border-radius:8px;
   border: 1px solid;
-  
   margin-top:20px;
   margin-bottom:25px;
   float:left;
-  margin-left:22px;
+  margin-left:95px;
   font-weight:800;
   font-size:0.8em;
+}
+#create-account {
+	margin-left:770px;
+	font-size:20px;
 }
 

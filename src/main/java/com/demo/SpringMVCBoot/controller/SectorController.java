@@ -1,12 +1,11 @@
 package com.demo.SpringMVCBoot.controller;
 
-import org.springframework.web.servlet.ModelAndView;
+import java.util.List;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import com.demo.SpringMVCBoot.model.Company;
-import com.demo.SpringMVCBoot.model.Sectors;
 
 public interface SectorController {
-	
-	//public Company FindBySectorName();
-//	public Sectors FindBySectorName();
+	List<Company> FindBySectorName(@PathVariable String name);
+	List<String> FindByCompanyName(@PathVariable("name") String name);
 }

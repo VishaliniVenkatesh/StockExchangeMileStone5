@@ -1,99 +1,71 @@
 package com.demo.SpringMVCBoot.controller;
 
-import java.math.BigDecimal;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-//import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.demo.SpringMVCBoot.model.Company;
-import com.demo.SpringMVCBoot.model.StockExchange;
+import com.demo.SpringMVCBoot.model.Sectors;
 import com.demo.SpringMVCBoot.model.StockPrice;
-//import com.demo.SpringMVCBoot.service.CompanyDetailService;
+import com.demo.SpringMVCBoot.service.CompanyDetailService;
+import com.demo.SpringMVCBoot.service.SectorService;
 import com.demo.SpringMVCBoot.service.StockPriceService;
 
 
-@Controller
+@RestController
 public class StockPriceControllerImpl {
 	@Autowired
 	private StockPriceService stockPriceService;
 	
-	
-//	@Autowired
-//	private CompanyDetailService companyService;
-//	
-	@RequestMapping(path="/stockPriceList")
+	@Autowired
+	private SectorService sectorService;
+	@Autowired
+	private CompanyDetailService companyService;
+	@RequestMapping(path="/displayStockPriceList")
 	public ModelAndView getCompanyList() throws Exception {
-		//System.out.println("jiihhkhoh");
 		ModelAndView mv=new ModelAndView();
 		mv.setViewName("stockPriceList");
 		mv.addObject("stockPriceList",stockPriceService.getStockPriceList());
 		return mv;
 	}
 	
-	
-@RequestMapping(path="/insertStockPrice",method = RequestMethod.GET)
-	public String insert()
-	{
-		StockPrice stock=new StockPrice();
-		stock.setCurrentPrice(4000);
-		stock.setDate(new Date());
-		stock.setStockId(2);
+	@GetMapping("stockPrice/{companyname}")
+	public List<StockPrice> getStockPriceDetails(@PathVariable String companyname) {
 		
-		StockExchange stockExchange=new StockExchange();
-		stockExchange.setStockExchangeName("BSE");
-		stockExchange.setContactAddress("Chennai");
-		stockExchange.setRemarks("none");
-		
-		
-		Company company=new Company();
-		//company.setCompanyCode(1025);
-		company.setCompanyName("zoho");
-		company.setCeo("dfhg");
-		company.setTurnover(new BigDecimal(74565.23d));
-		company.setBoardOfDirectors("12");
-		company.setBriefWriteup("asbc");
-		
-		
-		
-		stock.setCompany(company);
-		stock.setStockExchange(stockExchange);
-		
-		System.out.println();
-		try {
-			//companyService.insertCompany(company);
-			stockPriceService.insertStock(stock);
-			List<StockPrice> stocks=stockPriceService.getStockPriceList();
-			for(StockPrice stock1:stocks){
-				System.out.println(stock1.getStockId());
-				System.out.println(stock1.getCompany().getCompanyCode());
-				System.out.println(stock1.getStockExchange().getStockExchangeName());
-			}
-			
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return "redirect:companyList";
+		Company company=companyService.findBycompanyName(companyname);
+		int stockPrice=company.getCompanyCode();
+		return stockPriceService.findBycompanyCode(stockPrice);
 	}
 
-/*
- @RequestMapping(value = "/addCompany", method = RequestMethod.GET)
-	public String insert(ModelMap model) {
-		System.out.println("Add New Stock Price");
-		StockPrice stockPrice=new StockPrice();
+	
+	@PostMapping("/upload")
+	public List<StockPrice> upload(@RequestParam("file") MultipartFile file) throws Exception {
+		return stockPriceService.upload(file);
+	}
+	
+	@GetMapping("stockPriceList/{sectorName}")
+	public List<StockPrice> getStockPriceList(@PathVariable String sectorName) {
 		
-		model.addAttribute("stockprice", stockPrice);
-		Company company=new Company();
-		company.setCompanyCode(1025);
-		company.setCompanyName("cts");
-		company.setTurnover(new BigDecimal(434.45d));
-		stockPrice.setCompany(company);
-		return "insertStockPrice";		
-	} 	*/
+		
+		Sectors sectorId=sectorService.findBySectorName(sectorName);
+		int sector=sectorId.getSectorId();
+		List<Company> company=companyService.findbySectorId(sector);
+		List<StockPrice> stockPriceList=new ArrayList<>();
+		for(Company company_code:company)
+		{
+			int companyCode=company_code.getCompanyCode();
+			stockPriceList.addAll(stockPriceService.findBycompanyCode(companyCode));
+		}
+		return stockPriceList;
+	}
+
+
 }

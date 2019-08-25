@@ -5,21 +5,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../css/style.css" type="text/css"></link>
+<link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" >
 </head>
 <body>
     <header>
         
         <img src="images/logo.png" alt="no image" width="70px" height="70px;"> <p id="heading">Stock Market</p>
         
-         <!-- <div id="text"> -->
-             
          </header>
          <nav>
-                <a href="dispaly-ipodetails.html">IPO Details</a>
-                <a href="comparisonPage.html">Compare Company</a>
-                <a href="comparisonPage.html">Company Sectors</a>
-                <a href="signup.html" id="topic">Logout</a>
+                <a href="/IPODetailsList">IPO Details</a>
+                <a href="#">Compare Company</a>
+                <a href="#">Company Sectors</a>
+                <a href="/login" id="topic">Logout</a>
                
          </nav>
     <footer>

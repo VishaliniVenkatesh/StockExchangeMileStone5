@@ -57,23 +57,23 @@ public class CompanyRegistrationControllerImpl implements CompanyRegistrationCon
 		}
 		
 	}
-	@RequestMapping(value = "/addCompany", method = RequestMethod.GET)
+	@RequestMapping(value = "/insertCompany", method = RequestMethod.GET)
 	public String getCompanyForm(ModelMap model) {
 		System.out.println("Add New Company");
 		Company c=new Company();
 		
 		model.addAttribute("company", c);
-		return "companyForm";		
+		return "insertCompany";		
 	} 
 	
-	@RequestMapping(value = "/addCompany", method = RequestMethod.POST)
+	@RequestMapping(value = "/insertCompany", method = RequestMethod.POST)
 	public String formHandler(@ModelAttribute("company") @Valid Company company, 
 			BindingResult result, Model model) throws SQLException {
 		System.out.println(company);
 		
 		if(result.hasErrors()){
 			System.out.println("error");
-			return "companyForm";
+			return "insertCompany";
 		}
 		
 	companyDetailService.insertCompany(company);

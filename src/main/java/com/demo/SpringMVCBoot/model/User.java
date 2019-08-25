@@ -5,14 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 
-import org.hibernate.validator.constraints.Range;
 
 @Entity
 @Table(name="user")
@@ -20,7 +14,6 @@ public class User {
 	@Id
 	@GeneratedValue
 	@Column(name="id")
-	
 	private int id;
 	@Column(name="username")
 	@NotEmpty(message="Username cannot be empty")
@@ -28,12 +21,11 @@ public class User {
 	@Column(name="password")
 	@NotEmpty(message="Password cannot be empty")
 	private String password;
-	@Column(name="usertype")
+	@Column(name="confirmPassword")
 	@NotEmpty(message="Please enter confirm password")
     private String confirmPassword;
 	@Column(name="email")
 	@NotEmpty(message="Please enter email-id")
-	
     private String email;
 	@Column(name="mobile_number")
 	private long mobileNumber;
@@ -47,7 +39,6 @@ public class User {
 		super();
 		this.id = id;
 		this.username = username;
-		
 		this.password = password;
 		this.confirmPassword = confirmPassword;
 		this.email = email;
@@ -62,7 +53,7 @@ public class User {
 		this.id = id;
 	}
 
-	public String getUsername() {
+	public  String getUsername() {
 		return username;
 	}
 

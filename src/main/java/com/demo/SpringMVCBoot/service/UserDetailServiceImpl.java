@@ -1,6 +1,7 @@
 package com.demo.SpringMVCBoot.service;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,12 @@ public class UserDetailServiceImpl implements UserDetailService{
 		return userDetailsDao.save(user);
 		
 		
+	}
+
+
+	@Override
+	public List<User> userLogin() {
+		return userDetailsDao.findAll();
 	}
 
 }

@@ -9,20 +9,16 @@
 <body>
 
 <%
-System.out.println("hai");
 List stockPriceList=(List)request.getAttribute("stockPriceList");
-System.out.println(stockPriceList);
-System.out.println("hafdi");
 %>
 
 <table border="2">
 <tr>
-<td>Stock id<td>
+<td>Stock id</td>
+<td>Company Code</td>
 <td>Price</td>
+<td>Stock Exchange Id</td>
 <td>Date</td>
-<td>CEO</td>
-<td>Company Name</td>
-<td>Stock Exchange Name</td>
 </tr>
 
 <% for(int i=0;i<stockPriceList.size();i++){
@@ -30,14 +26,11 @@ System.out.println("hafdi");
 	%>
 <tr>
 
-<td><%= stock.getStockId() %><td>
+<td><%= stock.getStockId() %></td>
+<td><%= stock.getCompanyCode() %></td>
 <td><%= stock.getCurrentPrice() %></td>
+<td><%= stock.getStockExchangeId() %></td>
 <td><%= stock.getDate() %></td>
-<td><%= stock.getCompany().getCeo() %></td>
-<td><%= stock.getCompany().getCompanyName() %></td>
-<td><%= stock.getStockExchange().getStockExchangeName() %></td>
-
-
 
 </tr>
 <% }%>

@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.demo.SpringMVCBoot.dao.SectorDao;
-import com.demo.SpringMVCBoot.model.Company;
+
 import com.demo.SpringMVCBoot.model.Sectors;
 
 

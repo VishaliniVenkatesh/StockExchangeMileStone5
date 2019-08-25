@@ -1,16 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
      <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>   
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" >
 </head>
-<body class="container">
+<body>
  <header>
-        <img src="images/logo.png" alt="no image" width="70px" height="70px;"> <p id="heading">Stock Market</p>
+        <img src="images/logo.png" alt="no image" width="70px" height="70px;"> <p id="heading">Stock Market </p>
        </header>
          <nav>
                 <a href="importStockPage.html">Import Data</a>
@@ -24,7 +24,7 @@
                         <a href="/companyList">Update Company</a>
                     </div>
                 </div>
-               <div class="dropdown">
+                 <div class="dropdown">
                     <button class="dropbtn">Manage exchange
                         <i class="fa fa-caret-down"></i>
                     </button>
@@ -33,46 +33,42 @@
                         <a href="/stockList">List Stock Exchange</a>
                     </div>
                 </div>
-				<a href="/insertpo">Update IPO Details</a>
+               
+                <a href="/insertIpo">Update IPO Details</a>
                 <a href="/login" id="topic">Logout</a>
             </nav>
 <article>
 
-<form:form method="POST" action="/addStock"
-  modelAttribute="stock">
+<form:form method="POST" action="/insertIpoDetail"
+  modelAttribute="ipo">
 	
     
-     <p id="body-heading">Create a new Stock Exchange</p>
+     <p id="body-heading">Insert IPO Details</p>
            <table class="insert-table">
-               
                 <tr>
-                    <td><label>Stock Exchange Name</label></td>
-                    <td><form:input type="text"  path="stockExchangeName"/></td>
-                    <div class="has-error">
-                        <form:errors path="stockExchangeName" class="text-danger"/>
-                    </div>
+                    <td><label>Company Code</label></td>
+                    <td><form:input type="text" path="companyCode"  /></td>
                 </tr>
                 <tr>
-                    <td><label>Brief</label></td>
-                    <td><form:input type="text" path="brief"/></td>
-                    <div class="has-error">
-                        <form:errors path="brief" class="text-danger"/>
-                    </div>
+                    <td><label>Stock Exchange Id</label></td>
+                    <td><form:input type="text" path="stock_exchange_id"/></td>
                 </tr>
                 <tr>
-                    <td><label>Contact Address</label></td>
-                    <td><form:input type="text" path="contactAddress"/></td>
-                    <div class="has-error">
-                        <form:errors path="contactAddress" class="text-danger"/>
-                    </div>
+                    <td><label>Price per share</label></td>
+                    <td><form:input type="text" path="price_per_share"/></td>
+                </tr>
+                  <tr>
+                    <td><label>Total No.Of Shares</label></td>
+                    <td><form:input type="number" path="totalNoOfShares"  /></td>
+                </tr>
+                <tr>
+                    <td><label>Open Date time</label></td>
+                    <td><form:input type="text"  path="openDateTime"/></td>
                 </tr>
                 
                 <tr>
                     <td><label>Remarks</label></td>
                     <td><form:input type="text" path="remarks"/></td>
-                    <div class="has-error">
-                        <form:errors path="remarks" class="text-danger"/>
-                    </div>
                 </tr>
                 
                 <tr>

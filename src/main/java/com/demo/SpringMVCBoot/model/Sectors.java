@@ -1,15 +1,11 @@
 package com.demo.SpringMVCBoot.model;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.demo.SpringMVCBoot.model.Company;
 @Entity
 @Table(name="sectors")
 public class Sectors {
@@ -21,10 +17,6 @@ public class Sectors {
 	private String sectorName;
 	@Column(name="brief")
 	private String brief;
-	//@OneToMany
-	//private List<Company> companies;
-	
-	
 	public Sectors()
 	{
 		
@@ -57,6 +49,5 @@ public class Sectors {
 	public String toString() {
 		return "Sectors [sectorId=" + sectorId + ", sectorName=" + sectorName + ", brief=" + brief + "]";
 	}
-	
 	
 }
