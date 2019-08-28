@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
  import="java.util.*,com.demo.SpringMVCBoot.model.Company"    pageEncoding="UTF-8"%>
+ 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -35,8 +36,8 @@
                         <a href="/stockList">List Stock Exchange</a>
                     </div>
                 </div>
-                <a href="/insertIpo">Update IPO Details</a>
-                <a href="/login" id="topic">Logout</a>
+                          <a href="/insertIpo">Insert IPO Details</a>
+                <a href="/loginForm" id="topic">Logout</a>
             </nav>
     <p id="body-heading">List of Companies</p>
 
@@ -67,10 +68,13 @@ System.out.println(companyList);
 <td><%= e.getCeo() %></td>
 <td><%= e.getBoardOfDirectors() %></td>
 <td><%= e.getBriefWriteup() %></td>
-<td><input type="submit"  value="Update" id="button" /></td>
+<td><a href="/updateCompany?id=<%= e.getCompanyCode() %>"><input type="submit"  value="Edit" id="button" /></a></td>
 
-</tr>
+
+
+				 
 <% }%>
+
 
 </table>
 

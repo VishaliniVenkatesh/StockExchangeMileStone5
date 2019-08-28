@@ -20,7 +20,6 @@ public class CompanyDetailServiceImpl implements CompanyDetailService {
 	
 	@Override
 	public List<Company> getCompanyList() throws SQLException {
-		
 		return companyDetailsDao.findAll();
 	}
 
@@ -37,6 +36,11 @@ public class CompanyDetailServiceImpl implements CompanyDetailService {
 	@Override
 	public Company findBycompanyName(String name) {
 		return companyDetailsDao.findByCompanyName(name);
+	}
+
+	@Override
+	public List<Company> updateCompany(int id) {
+		return companyDetailsDao.findAllByCompanyCode(id);
 	}
 
 }

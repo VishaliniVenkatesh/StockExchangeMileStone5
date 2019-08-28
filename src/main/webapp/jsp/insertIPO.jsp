@@ -34,8 +34,9 @@
                     </div>
                 </div>
                
-                <a href="/insertIpo">Update IPO Details</a>
-                <a href="/login" id="topic">Logout</a>
+                        <a href="/insertIpo">Insert IPO Details</a>
+                        
+                <a href="/loginForm" id="topic">Logout</a>
             </nav>
 <article>
 
@@ -63,7 +64,7 @@
                 </tr>
                 <tr>
                     <td><label>Open Date time</label></td>
-                    <td><form:input type="text"  path="openDateTime"/></td>
+                    <td><form:input type="date"  path="openDateTime"/></td>
                 </tr>
                 
                 <tr>

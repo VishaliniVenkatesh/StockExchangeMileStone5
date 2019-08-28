@@ -19,17 +19,12 @@ public class SectorServiceImpl implements SectorService{
 
 	@Override
 	public List<Sectors> getSectorList() throws SQLException {
-	// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Sectors findBySectorName(String name) {
-		// TODO Auto-generated method stub
 		return sectorDao.findBySectorName(name);
 	}
 	
-	
-	
-
 }

@@ -17,12 +17,8 @@ public class UserDetailServiceImpl implements UserDetailService{
 	
 	@Override
 	public User registerUser(User user) throws SQLException {
-		
 		return userDetailsDao.save(user);
-		
-		
 	}
-
 
 	@Override
 	public List<User> userLogin() {

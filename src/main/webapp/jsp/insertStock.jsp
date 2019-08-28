@@ -9,9 +9,9 @@
 <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" >
 </head>
 <body class="container">
- <header>
+<header>
         <img src="images/logo.png" alt="no image" width="70px" height="70px;"> <p id="heading">Stock Market</p>
-       </header>
+</header>
          <nav>
                 <a href="importStockPage.html">Import Data</a>
         
@@ -33,8 +33,8 @@
                         <a href="/stockList">List Stock Exchange</a>
                     </div>
                 </div>
-				<a href="/insertpo">Update IPO Details</a>
-                <a href="/login" id="topic">Logout</a>
+                  <a href="/insertIpo">Insert IPO Details</a>
+                <a href="/loginForm" id="topic">Logout</a>
             </nav>
 <article>
 
@@ -48,31 +48,26 @@
                 <tr>
                     <td><label>Stock Exchange Name</label></td>
                     <td><form:input type="text"  path="stockExchangeName"/></td>
-                    <div class="has-error">
+                    <td><div class="has-error">
                         <form:errors path="stockExchangeName" class="text-danger"/>
-                    </div>
+                    </div></td>
                 </tr>
                 <tr>
                     <td><label>Brief</label></td>
                     <td><form:input type="text" path="brief"/></td>
-                    <div class="has-error">
-                        <form:errors path="brief" class="text-danger"/>
-                    </div>
+                    
                 </tr>
                 <tr>
                     <td><label>Contact Address</label></td>
                     <td><form:input type="text" path="contactAddress"/></td>
-                    <div class="has-error">
+                    <td><div class="has-error">
                         <form:errors path="contactAddress" class="text-danger"/>
-                    </div>
+                    </div></td>
                 </tr>
                 
                 <tr>
                     <td><label>Remarks</label></td>
                     <td><form:input type="text" path="remarks"/></td>
-                    <div class="has-error">
-                        <form:errors path="remarks" class="text-danger"/>
-                    </div>
                 </tr>
                 
                 <tr>

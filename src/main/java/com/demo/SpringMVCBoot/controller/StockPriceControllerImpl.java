@@ -2,7 +2,6 @@ package com.demo.SpringMVCBoot.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,8 +26,10 @@ public class StockPriceControllerImpl {
 	
 	@Autowired
 	private SectorService sectorService;
+	
 	@Autowired
 	private CompanyDetailService companyService;
+	
 	@RequestMapping(path="/displayStockPriceList")
 	public ModelAndView getCompanyList() throws Exception {
 		ModelAndView mv=new ModelAndView();
@@ -39,7 +40,6 @@ public class StockPriceControllerImpl {
 	
 	@GetMapping("stockPrice/{companyname}")
 	public List<StockPrice> getStockPriceDetails(@PathVariable String companyname) {
-		
 		Company company=companyService.findBycompanyName(companyname);
 		int stockPrice=company.getCompanyCode();
 		return stockPriceService.findBycompanyCode(stockPrice);
@@ -53,8 +53,6 @@ public class StockPriceControllerImpl {
 	
 	@GetMapping("stockPriceList/{sectorName}")
 	public List<StockPrice> getStockPriceList(@PathVariable String sectorName) {
-		
-		
 		Sectors sectorId=sectorService.findBySectorName(sectorName);
 		int sector=sectorId.getSectorId();
 		List<Company> company=companyService.findbySectorId(sector);

@@ -11,6 +11,4 @@ import com.demo.SpringMVCBoot.model.User;
 public interface UserDetailService {
 	public User registerUser(User user) throws SQLException;
 	public List<User> userLogin();
-	
-	
 }

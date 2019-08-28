@@ -15,15 +15,11 @@ public class StockExchangeServiceImpl implements StockExchangeService{
 	
 	@Override
 	public StockExchange insertStock(StockExchange stockExchange) throws SQLException {
-
-		int stockExchangeId=5;
-		stockExchange.setStockExchangeId(stockExchangeId);
 		return stockDao.save(stockExchange);
 	}
 
 	@Override
 	public List<StockExchange> getStockExchangesList() throws SQLException {
-		
 		return stockDao.findAll();
 	}
 

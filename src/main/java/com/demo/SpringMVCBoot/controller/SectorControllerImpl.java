@@ -13,7 +13,6 @@ import com.demo.SpringMVCBoot.service.SectorService;
 
 @RestController
 public class SectorControllerImpl implements SectorController{
-
 	
 	@Autowired
 	private SectorService sectorService;
@@ -21,19 +20,14 @@ public class SectorControllerImpl implements SectorController{
 	@Autowired
 	private CompanyDetailService companyService;
 	
-	
 	@GetMapping("sectorlist/{name}")
 	public List<Company> FindBySectorName(@PathVariable String name) {
-		
 		Sectors sectorId=sectorService.findBySectorName(name);
 		int sectorIdObj=sectorId.getSectorId();
 		return companyService.findbySectorId(sectorIdObj);
 	}
-	
 	@GetMapping("companylist/{name}")
 	public List<String> FindByCompanyName(@PathVariable("name") String name) {
 		return companyService.getCompanyByName(name);
 	}
-
-	
 }

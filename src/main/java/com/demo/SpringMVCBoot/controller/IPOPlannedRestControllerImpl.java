@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+
 import org.springframework.web.bind.annotation.RestController;
 import com.demo.SpringMVCBoot.model.Company;
 import com.demo.SpringMVCBoot.model.IPOPlanned;
@@ -20,12 +21,9 @@ public class IPOPlannedRestControllerImpl {
 	
 	@GetMapping("ipolist/{name}")
 	public List<IPOPlanned> getCompanyName(@PathVariable String name) {
-		
 		Company company=companyService.findBycompanyName(name);
 		int ipoPlanned=company.getCompanyCode();
 		return ipoService.findBycompanyCode(ipoPlanned);
 	}
-	
-	
 	
 }

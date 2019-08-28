@@ -28,4 +28,10 @@ public class IPOPlannedServiceImpl implements IPOPlannedService{
 	public IPOPlanned insertIPO(IPOPlanned ipo) throws SQLException {
 		return ipoDao.save(ipo);
 		}
+
+	@Override
+	public List<IPOPlanned> updateIPO(int id) {
+		return ipoDao.findAllById(id);
+	}
+	
 }

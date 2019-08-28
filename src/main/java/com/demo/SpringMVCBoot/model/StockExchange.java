@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name="stock_exchange")
@@ -13,10 +14,12 @@ public class StockExchange {
 	@GeneratedValue
 	@Column(name="stock_exchange_id")
 	private int stockExchangeId;
+	@NotEmpty(message="Please enter Stock Exchange Name")
 	@Column(name="stock_exchange_name")
 	private String stockExchangeName;
 	@Column(name="brief")
 	private String brief;
+	@NotEmpty(message="Please enter Contact adrress")
 	@Column(name="contact_address")
 	private String contactAddress;
 	@Column(name="remarks")

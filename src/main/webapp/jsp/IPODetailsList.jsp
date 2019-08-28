@@ -15,30 +15,10 @@
              
          </header>
          <nav>
-                <a href="#">Import Data</a>
-        
-                <div class="dropdown">
-                    <button class="dropbtn">Manage Company
-                        <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="/insertCompany">Add Company</a>
-                        <a href="/companyList">Update Company</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="dropbtn">Manage exchange
-                        <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="/addStock">Add New</a>
-                        <a href="/stockList">List Stock Exchange</a>
-                    </div>
-                </div>
-                <a href="/insertIpo">Update IPO Details</a>
-                <a href="/login" id="topic">Logout</a>
+                
+                <a href="/loginForm" id="topic">Logout</a>
             </nav>
-    <p id="body-heading">List of Companies</p>
+    <p id="body-heading">List of IPO Details</p>
 
 <%
 List ipoList=(List)request.getAttribute("IPODetailsList");
@@ -69,7 +49,6 @@ System.out.println(ipoList);
 <td><%= ipo.getOpenDateTime() %></td>
 <td><%= ipo.getTotalNoOfShares() %></td>
 <td><%= ipo.getRemarks() %>
-
 
 </tr>
 <% }%>

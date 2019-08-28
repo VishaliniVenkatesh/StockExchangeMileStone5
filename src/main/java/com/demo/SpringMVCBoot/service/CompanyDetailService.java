@@ -11,9 +11,6 @@ public interface CompanyDetailService {
 	public List<Company> findbySectorId(int sectorIdObj);
 	public List<String> getCompanyByName(String name);
 	public Company findBycompanyName(String name);
-	
-	
-	
-	
+	public Object updateCompany(int id);
 	
 }

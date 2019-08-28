@@ -1,9 +1,7 @@
 package com.demo.SpringMVCBoot.controller;
 
 import java.sql.SQLException;
-
 import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,9 +19,7 @@ public class IPOPlannedControllerImpl implements IPOPlannedController{
 	IPOPlannedService ipoService;
 	@RequestMapping(value = "/insertIpo")
 	public String insertIPODetails(Model model) {
-		
 		IPOPlanned ipo=new IPOPlanned();
-		
 		model.addAttribute("ipo", ipo);
 		return "insertIPO";
 	}	
@@ -41,8 +37,8 @@ public class IPOPlannedControllerImpl implements IPOPlannedController{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 	}
+	
 	@RequestMapping(value = "/insertIpoDetail", method = RequestMethod.POST)
 	public String formHandler(@ModelAttribute("ipo") @Valid IPOPlanned ipo, 
 			BindingResult result, Model model) throws SQLException {
@@ -51,10 +47,7 @@ public class IPOPlannedControllerImpl implements IPOPlannedController{
 			System.out.println("error");
 			return "insertIpo";
 		}
-		
 	ipoService.insertIPO(ipo);
-	
 	return "redirect:IPODetailsList";
 }
-
 }

@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-Error!Please enter your password Correct..
+Error!
 </body>
 </html>

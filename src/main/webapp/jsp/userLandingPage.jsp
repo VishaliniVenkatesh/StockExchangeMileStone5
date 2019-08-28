@@ -17,7 +17,7 @@
                 <a href="/IPODetailsList">IPO Details</a>
                 <a href="#">Compare Company</a>
                 <a href="#">Company Sectors</a>
-                <a href="/login" id="topic">Logout</a>
+                <a href="/loginForm" id="topic">Logout</a>
                
          </nav>
     <footer>

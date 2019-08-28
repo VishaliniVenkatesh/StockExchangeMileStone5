@@ -32,7 +32,7 @@ public class Company {
 	@NotEmpty(message="please enter remarks")
 	@Column(name="brief_writeup")
 	private String briefWriteup;
-	@NotEmpty(message="Stock code cannot be empty")
+	//@NotEmpty(message="Stock code cannot be empty")
 	@Column(name="stock_code")
 	private int stockCode;
 	public Company()
